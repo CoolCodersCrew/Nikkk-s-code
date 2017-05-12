@@ -21,6 +21,7 @@
  * configure a UART port (usartOpen()) but cannot set up an LCD (lcdInit()).
  */
 void initializeIO() {
+
 }
 
 /*
@@ -44,4 +45,7 @@ void initialize() {
     motorSet(i+1, slewTarget[i]);
   }
   taskCreate (slewControlTask, TASK_DEFAULT_STACK_SIZE, NULL, TASK_PRIORITY_DEFAULT - 1);
+
+  int IMECount = imeInitializeAll();
+
 }
